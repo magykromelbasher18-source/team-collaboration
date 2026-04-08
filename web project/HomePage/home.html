@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Services Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+            <button id="close-sidebar" class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#hair">Hair</a></li>
+            <li><a href="#nails">Nails</a></li>
+            <li><a href="#lashes">Lashes</a></li>
+            <li><a href="#makeup">Makeup</a></li>
+        </ul>
+    </aside>
+
+    <!-- Overlay for sidebar -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-left">
+                <button id="hamburger" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="header-center">
+                <h1 class="brand" id="brand">Pamper</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                    <button class="clear-btn" style="display: none;"><i class="fas fa-times"></i></button>
+                </div>
+                <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-btn"><i class="fas fa-user"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#hair">Hair</a></li>
+                <li><a href="#nails">Nails</a></li>
+                <li><a href="#lashes">Lashes</a></li>
+                <li><a href="#makeup">Makeup</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="slider">
+            <div class="slide active">
+                <img src="image111.png" alt="image1">
+                <div class="slide-content">
+                <h1>Home<br> beauty services</h1>
+                <p>Book your beauty service at home!</p>
+                <button class="book-btn">Book Now</button>
+            </div>
+        </div>
+            </div>
+            <div class="slide">
+                <img src="image2.jpg" alt="image2">
+                <div class="slide-content">
+                <h1>Home<br> beauty services</h1>
+                <p>Book your beauty service at home!</p>
+                <button class="book-btn">Book Now</button>
+            </div>
+
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image3.avif" alt="image3">
+                <div class="slide-content">
+                <h1>Home<br> beauty services</h1>
+                <p>Book your beauty service at home!</p>
+                <button class="book-btn">Book Now</button>
+            </div>
+                </div>
+            </div>
+        </div>
+        <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+   <ul class="HAYYY">
+    <li>
+         <img src="hair.avif" alt="Hair">
+
+        <div class="content">
+            <span>
+                <h2>Hair</h2>
+                <p>life isn't perfect, but your hair can be!</p>
+            </span>
+        </div>
+    </li>
+
+    <li>
+       <img src="Nails.avif" alt="Nails">
+
+        <div class="content">
+            <span>
+                <h2>Nails</h2>
+                <p>Where beauty meets artistry!</p>
+            </span>
+        </div>
+    </li>
+
+    <li>
+        <img src="lashes.avif" alt="Lashes">
+
+        <div class="content">
+            <span>
+                <h2>Lashes</h2>
+                <p>When your lashes slay, so does your confidence</p>
+            </span>
+        </div>
+    </li>
+
+    <li>
+       <img src="makeup.avif" alt="Makeup">
+
+        <div class="content">
+            <span>
+                <h2>Makeup</h2>
+                <p>Makeup is your power!</p>
+            </span>
+        </div>
+    </li>
+</ul>
+
+    <!-- Featured Services -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2>Featured Services</h2>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <img src="Hair Cut & Styling.avif" alt="Hair Cut">
+                    <h3>Hair Cut & Styling</h3>
+                    <p>Professional hair cutting and styling services tailored to your preferences.</p>
+                    <button class="btn">Book Now</button>
+                </div>
+                <div class="featured-card">
+                    <img src="Manicure.avif" alt="Manicure">
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Relaxing nail treatments with the latest trends and techniques.</p>
+                    <button class="btn">Book Now</button>
+                </div>
+                <div class="featured-card">
+                    <img src="Eyelash Extension.avif" alt="Eyelash Extension">
+                    <h3>Eyelash Extension</h3>
+                    <p>Enhance your natural beauty with our premium eyelash extensions.</p>
+                    <button class="btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="shampoo.avif" alt="Shampoo">
+                    <h3>Luxury Shampoo</h3>
+                    <p class="price">250 EGP</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="nails polish.avif" alt="Nail Polish">
+                    <h3>Nail Polish Set</h3>
+                    <p class="price">85 EGP</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="Volume Mascara.avif" alt="Mascara">
+                    <h3>Volume Mascara</h3>
+                    <p class="price">450 EGP</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="Matte Lipstick.avif" alt="Lipstick">
+                    <h3>Matte Lipstick</h3>
+                    <p class="price">680 EGP</p>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Pamper , we are passionate about enhancing your natural beauty and helping you feel confident and radiant. Our team of experienced professionals offers a wide range of beauty services using the latest techniques and high-quality products. Whether you're looking for a fresh haircut, stunning nails, or flawless makeup, we have everything you need to look and feel your best.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pamper</h3>
+                    <p>Your beauty destination</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> 01234567891</p>
+                    <p><i class="fas fa-envelope"></i> Pampering911@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Apartment 12, Building 45, North Investors Area, New Cairo, Cairo, Egypt</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Pamper. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>
