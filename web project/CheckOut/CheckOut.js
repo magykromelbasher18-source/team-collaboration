@@ -1,3 +1,72 @@
+const checkoutCart = JSON.parse(localStorage.getItem("pamperCart") || "[]");
+const orderItemsEl = document.getElementById("orderItems");
+const emptyCartEl = document.querySelector(".empty-cart");
+const itemCountEl = document.querySelector(".item-count");
+const subtotalValueEl = document.getElementById("subtotalValue");
+const shippingLabelEl = document.getElementById("shippingLabel");
+const grandTotalEl = document.getElementById("grandTotal");
+
+function parsePrice(value) {
+  return Number(value.replace(/[^\d.]/g, "")) || 0;
+}
+
+function formatCurrency(amount) {
+  return `EGP ${amount.toFixed(2)}`;
+}
+
+function getShippingCost() {
+  return 0;
+}
+
+function renderOrderItems() {
+  if (!orderItemsEl) return;
+  orderItemsEl.innerHTML = checkoutCart
+    .map(function (item) {
+      return (
+        '<div class="order-item">' +
+        "<span>" +
+        item.name +
+        "</span>" +
+        "<span>" +
+        item.price +
+        "</span>" +
+        "</div>"
+      );
+    })
+    .join("");
+}
+
+function updateCheckoutSummary() {
+  if (!itemCountEl || !subtotalValueEl || !shippingLabelEl || !grandTotalEl)
+    return;
+
+  itemCountEl.textContent =
+    checkoutCart.length + (checkoutCart.length === 1 ? " item" : " items");
+  if (checkoutCart.length === 0) {
+    if (emptyCartEl) emptyCartEl.style.display = "block";
+    if (orderItemsEl) orderItemsEl.style.display = "none";
+  } else {
+    if (emptyCartEl) emptyCartEl.style.display = "none";
+    if (orderItemsEl) orderItemsEl.style.display = "block";
+    renderOrderItems();
+  }
+
+  var subtotal = checkoutCart.reduce(function (sum, item) {
+    return sum + parsePrice(item.price);
+  }, 0);
+  var shippingCost = getShippingCost();
+  var total = subtotal + shippingCost;
+
+  subtotalValueEl.textContent = formatCurrency(subtotal);
+  shippingLabelEl.textContent =
+    shippingCost === 0 ? "Free" : formatCurrency(shippingCost);
+  grandTotalEl.textContent = formatCurrency(total);
+}
+
+window.addEventListener("load", function () {
+  updateCheckoutSummary();
+});
+
 function formatCard(input) {
   let v = input.value.replace(/\D/g, "").substring(0, 16);
   input.value = v.match(/.{1,4}/g)?.join(" ") || v;
@@ -22,6 +91,7 @@ function toggleCashOnDelivery(checkbox) {
   const expiryInput = document.getElementById("expiryInput");
   const cvvInput = document.getElementById("cvvInput");
   const cardName = document.getElementById("cardName");
+
   if (checkbox.checked) {
     selectedPaymentMethod = "cod";
     paymentIcons.style.display = "none";
@@ -49,28 +119,6 @@ function toggleCashOnDelivery(checkbox) {
   }
 }
 
-function applyCoupon() {
-  const code = document
-    .getElementById("couponInput")
-    .value.trim()
-    .toUpperCase();
-  const msg = document.getElementById("couponMsg");
-  if (code === "") {
-    msg.style.color = "var(--text-muted)";
-    msg.textContent =
-      "Discount code is optional. Leave blank to continue without it.";
-    return;
-  }
-
-  if (code === "BEAUTY10" || code === "SAVE10") {
-    msg.style.color = "var(--success)";
-    msg.textContent = "✓ Coupon applied! 10% discount added.";
-  } else {
-    msg.style.color = "var(--error)";
-    msg.textContent = "✗ Invalid or expired code. Try BEAUTY10";
-  }
-}
-
 function validateEmail(input) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (regex.test(input.value)) input.classList.add("valid");
@@ -91,6 +139,14 @@ function clearFormErrors() {
 
 function handleSubmit() {
   clearFormErrors();
+
+  if (checkoutCart.length === 0) {
+    showFormError(
+      "Your cart is empty. Please add items before placing an order.",
+    );
+    return;
+  }
+
   const isCod = document.getElementById("cashOnDelivery").checked;
   const emailInput = document.getElementById("emailInput");
   const firstName = document.getElementById("firstName");
@@ -103,6 +159,7 @@ function handleSubmit() {
   const expiryInput = document.getElementById("expiryInput");
   const cvvInput = document.getElementById("cvvInput");
   const cardName = document.getElementById("cardName");
+  const termsAccept = document.getElementById("termsAccept");
 
   const fields = [
     { field: emailInput, name: "Email address" },
@@ -131,10 +188,18 @@ function handleSubmit() {
     return;
   }
 
-  const termsAccept = document.getElementById("termsAccept");
+  const phonePattern = /^\+20\s?1[0-9]{2}\s?[0-9]{3}\s?[0-9]{4}$/;
+  if (!phonePattern.test(phoneInput.value.trim())) {
+    phoneInput.classList.add("invalid-field");
+    phoneInput.focus();
+    showFormError(
+      "Please enter a valid Egyptian phone number (+20 1xx xxx xxxx).",
+    );
+    return;
+  }
+
   if (!termsAccept.checked) {
     termsAccept.classList.add("invalid-field");
-    termsAccept.focus();
     showFormError(
       "Please accept the terms and conditions for home beauty services.",
     );
@@ -163,14 +228,16 @@ function handleSubmit() {
   btn.textContent = "⏳ Processing...";
   btn.style.opacity = "0.8";
   btn.disabled = true;
-  setTimeout(() => {
+
+  setTimeout(function () {
     btn.textContent = "✓ Order Placed!";
     btn.style.background = "var(--success)";
     btn.style.boxShadow = "0 4px 16px rgba(45,122,79,0.3)";
     btn.style.opacity = "1";
+    localStorage.removeItem("pamperCart");
+
+    setTimeout(function () {
+      window.location.href = "../HomePage/home.html";
+    }, 1400);
   }, 2000);
 }
-
-document.getElementById("couponInput").addEventListener("keydown", (e) => {
-  if (e.key === "Enter") applyCoupon();
-});
