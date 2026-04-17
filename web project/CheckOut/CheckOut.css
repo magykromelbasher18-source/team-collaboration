@@ -39,7 +39,6 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
@@ -68,6 +67,7 @@ header {
   align-items: center;
   gap: 8px;
 }
+
 .logo-dot {
   width: 6px;
   height: 6px;
@@ -107,7 +107,6 @@ header {
   animation: fadeUp 0.55s ease both;
 }
 
-/* BREADCRUMB */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -117,15 +116,16 @@ header {
   margin-bottom: 28px;
   letter-spacing: 0.04em;
 }
+
 .breadcrumb a {
   color: var(--accent);
   text-decoration: none;
 }
+
 .breadcrumb a:hover {
   text-decoration: underline;
 }
 
-/* SECTION */
 .section-title {
   font-family: "Playfair Display", serif;
   font-size: 18px;
@@ -134,23 +134,25 @@ header {
   margin-bottom: 18px;
   color: var(--accent);
 }
+
 .section-divider {
   border: none;
   border-top: 1px solid var(--border);
   margin: 28px 0;
 }
 
-/* FORM */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 12px;
 }
+
 .form-group {
   margin-bottom: 12px;
   position: relative;
 }
+
 label {
   display: block;
   font-size: 10px;
@@ -160,6 +162,7 @@ label {
   color: var(--text-muted);
   margin-bottom: 5px;
 }
+
 input,
 select {
   width: 100%;
@@ -174,25 +177,29 @@ select {
     border-color 0.2s,
     box-shadow 0.2s;
   outline: none;
-  appearance: none;
 }
+
 input:focus,
 select:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(139, 26, 42, 0.1);
 }
+
 input::placeholder {
   color: var(--text-light);
 }
+
 select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M1 4l5 5 5-5' fill='none' stroke='%238b4a52' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
+  background-color: var(--input-bg);
   padding-right: 36px;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-/* CHECKBOX */
 .checkbox-row {
   display: flex;
   align-items: flex-start;
@@ -201,17 +208,20 @@ select {
   font-size: 13px;
   color: var(--text-muted);
 }
+
 .checkbox-row input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
+
 .checkbox-row label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
   margin-bottom: 0;
 }
+
 .checkbox-row label::before {
   content: "";
   position: absolute;
@@ -223,10 +233,12 @@ select {
   background: var(--input-bg);
   border-radius: 2px;
 }
+
 .checkbox-row input[type="checkbox"]:checked + label::before {
   background: var(--accent);
   border-color: var(--accent);
 }
+
 .checkbox-row input[type="checkbox"]:checked + label::after {
   content: "✓";
   position: absolute;
@@ -242,24 +254,26 @@ select {
   gap: 10px;
   margin-bottom: 14px;
 }
+
 .cod-checkbox-row input[type="checkbox"] {
   width: 16px;
   height: 16px;
   cursor: pointer;
 }
+
 .cod-checkbox-row label {
   cursor: pointer;
   font-size: 13px;
   color: var(--text);
 }
 
-/* PAYMENT */
 .payment-icons {
   display: flex;
   gap: 6px;
   flex-wrap: wrap;
   margin-bottom: 14px;
 }
+
 .payment-icon {
   border: 1px solid var(--border);
   border-radius: 5px;
@@ -280,10 +294,12 @@ select {
     border-color 0.2s,
     box-shadow 0.2s;
 }
+
 .card-field:focus-within {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(139, 26, 42, 0.1);
 }
+
 .card-number-row {
   padding: 11px 14px;
   border-bottom: 1px solid var(--border-light);
@@ -291,6 +307,7 @@ select {
   align-items: center;
   gap: 10px;
 }
+
 .card-number-row input {
   border: none;
   background: transparent;
@@ -298,10 +315,12 @@ select {
   flex: 1;
   box-shadow: none !important;
 }
+
 .card-bottom-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .card-bottom-row input {
   border: none;
   background: transparent;
@@ -309,39 +328,13 @@ select {
   border-radius: 0;
   box-shadow: none !important;
 }
+
 .card-bottom-row input:first-child {
   border-right: 1px solid var(--border-light);
 }
+
 .card-type-icon {
   font-size: 18px;
-}
-
-/* COUPON */
-.coupon-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-.coupon-row input {
-  flex: 1;
-}
-.btn-coupon {
-  padding: 11px 20px;
-  border: 1.5px solid var(--accent);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--accent);
-  font-family: "Jost", sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-  letter-spacing: 0.04em;
-}
-.btn-coupon:hover {
-  background: var(--accent);
-  color: white;
 }
 
 .payment-action-row {
@@ -374,6 +367,7 @@ select {
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.4;
+  margin-bottom: 14px;
 }
 
 .form-error-msg {
@@ -388,7 +382,6 @@ select {
   box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
 }
 
-/* SUBMIT */
 .btn-submit {
   width: 100%;
   padding: 15px;
@@ -409,16 +402,17 @@ select {
   gap: 10px;
   box-shadow: 0 4px 18px rgba(139, 26, 42, 0.35);
 }
+
 .btn-submit:hover {
   background: var(--accent-dark);
   box-shadow: 0 6px 28px rgba(139, 26, 42, 0.45);
   transform: translateY(-1px);
 }
+
 .btn-submit:active {
   transform: translateY(0);
 }
 
-/* PRIVACY */
 .privacy-note {
   margin-top: 14px;
   font-size: 11px;
@@ -430,7 +424,6 @@ select {
   gap: 5px;
 }
 
-/* SUMMARY */
 .summary-title {
   font-family: "Playfair Display", serif;
   font-size: 18px;
@@ -441,6 +434,7 @@ select {
   justify-content: space-between;
   color: var(--accent);
 }
+
 .item-count {
   font-family: "Jost", sans-serif;
   font-size: 12px;
@@ -448,7 +442,32 @@ select {
   color: var(--text-muted);
 }
 
-/* EMPTY STATE */
+.order-items {
+  display: none;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(139, 26, 42, 0.08);
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-item span {
+  font-size: 13px;
+  color: var(--text);
+}
+
 .empty-cart {
   display: flex;
   flex-direction: column;
@@ -458,6 +477,7 @@ select {
   text-align: center;
   gap: 14px;
 }
+
 .empty-cart-icon {
   width: 70px;
   height: 70px;
@@ -467,18 +487,25 @@ select {
   align-items: center;
   justify-content: center;
   font-size: 30px;
+  margin: 0 auto;
 }
+
 .empty-cart-title {
   font-family: "Playfair Display", serif;
   font-size: 18px;
   color: var(--accent);
 }
+
 .empty-cart-sub {
   font-size: 13px;
   color: var(--text-muted);
   line-height: 1.5;
   max-width: 220px;
+
+  text-align: center;
+  margin: 0 auto;
 }
+
 .btn-shop {
   margin-top: 6px;
   padding: 11px 24px;
@@ -494,17 +521,18 @@ select {
   transition: all 0.2s;
   box-shadow: 0 3px 12px rgba(139, 26, 42, 0.3);
 }
+
 .btn-shop:hover {
   background: var(--accent-dark);
   transform: translateY(-1px);
 }
 
-/* TOTALS */
 .totals {
   border-top: 1px solid var(--border);
   padding-top: 18px;
   margin-top: 6px;
 }
+
 .total-row {
   display: flex;
   justify-content: space-between;
@@ -512,6 +540,7 @@ select {
   padding: 5px 0;
   font-size: 14px;
 }
+
 .total-row.grand {
   font-family: "Playfair Display", serif;
   font-size: 19px;
@@ -520,12 +549,15 @@ select {
   margin-top: 6px;
   border-top: 1px solid var(--border);
 }
+
 .total-label {
   color: var(--text-muted);
 }
+
 .total-label.grand {
   color: var(--text);
 }
+
 .free-tag {
   background: #e8f5ee;
   color: var(--success);
@@ -535,7 +567,6 @@ select {
   font-weight: 600;
 }
 
-/* TRUST BADGES */
 .trust-badges {
   display: flex;
   gap: 14px;
@@ -543,6 +574,7 @@ select {
   padding-top: 22px;
   border-top: 1px solid var(--border);
 }
+
 .badge {
   flex: 1;
   text-align: center;
@@ -551,18 +583,17 @@ select {
   line-height: 1.4;
   letter-spacing: 0.02em;
 }
+
 .badge-icon {
   font-size: 20px;
   display: block;
   margin-bottom: 4px;
 }
 
-/* INPUT VALID */
 input.valid {
   border-color: #a3c4a8;
 }
 
-/* ANIMATIONS */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -574,7 +605,6 @@ input.valid {
   }
 }
 
-/* MOBILE */
 @media (max-width: 880px) {
   .checkout-wrapper {
     grid-template-columns: 1fr;
