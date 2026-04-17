@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="CheckOut.css" />
   </head>
   <body>
-    <header _blank>
+    <header>
       <a href="../HomePage/home.html" class="logo">
         <span class="logo-dot"></span>
         pamper
@@ -109,10 +109,6 @@
 
         <hr class="section-divider" />
 
-        <!-- SHIPPING METHOD -->
-
-        <!--<hr class="section-divider" /> -->
-
         <!-- PAYMENT -->
         <p class="section-title">Payment</p>
         <div class="cod-checkbox-row">
@@ -121,10 +117,10 @@
             id="cashOnDelivery"
             onclick="toggleCashOnDelivery(this)"
           />
-          <label for="cashOnDelivery">Cash on Delivery</label>
+          <label for="cashOnDelivery">Cash</label>
         </div>
         <div id="paymentMsg" class="payment-msg">
-          Pay by card or select Cash on Delivery to pay when your order arrives.
+          Pay by card or select Cash to pay when your order arrives.
         </div>
 
         <div class="payment-icons">
@@ -166,23 +162,6 @@
         </div>
 
         <hr class="section-divider" />
-
-        <!-- COUPON -->
-        <p class="section-title">Gift Card or Discount Code</p>
-        <div class="coupon-row">
-          <input type="text" placeholder="Enter code" id="couponInput" />
-        </div>
-        <div
-          id="couponMsg"
-          style="
-            font-size: 12px;
-            margin-top: -8px;
-            margin-bottom: 12px;
-            color: var(--text-muted);
-          "
-        >
-          Discount code is optional. Leave blank to continue without it.
-        </div>
         <div class="checkbox-row">
           <input type="checkbox" id="termsAccept" />
           <label for="termsAccept">
@@ -218,6 +197,8 @@
           <span class="item-count">0 items</span>
         </div>
 
+        <div id="orderItems" class="order-items" style="display: none"></div>
+
         <!-- Empty Cart State -->
         <div class="empty-cart">
           <div class="empty-cart-icon">🛒</div>
@@ -238,7 +219,7 @@
         <div class="totals">
           <div class="total-row">
             <span class="total-label">Subtotal</span>
-            <span>EGP 0.00</span>
+            <span id="subtotalValue">EGP 0.00</span>
           </div>
           <div class="total-row" id="discountRow" style="display: none">
             <span>Discount</span>
@@ -247,10 +228,6 @@
           <div class="total-row">
             <span class="total-label">Shipping</span>
             <span class="free-tag" id="shippingLabel">Free</span>
-          </div>
-          <div class="total-row">
-            <span class="total-label">Tax (included)</span>
-            <span>EGP 0.00</span>
           </div>
           <div class="total-row grand">
             <span class="total-label grand">Total</span>
