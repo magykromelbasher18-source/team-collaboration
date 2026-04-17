@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +8,12 @@
 body {
   font-family: "Arial", sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 .container {
@@ -47,7 +51,7 @@ h2 {
   color: #8b0000;
 }
 
-/* Sidebar */
+/* Sidebar -----------------------------------------------------------*/
 .sidebar {
   position: fixed;
   top: 0;
@@ -122,7 +126,7 @@ h2 {
   visibility: visible;
 }
 
-/* Header */
+/* Header -----------------------------------------------------------*/
 .header {
   position: sticky;
   top: 0;
@@ -207,13 +211,14 @@ h2 {
   color: #8b0000;
   cursor: pointer;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .icon-btn:hover {
   color: #ffc0cb;
 }
 
-/* Navigation */
+/* Navigation -----------------------------------------------------------*/
 .nav {
   background-color: #ffc0cb;
   padding: 10px 0;
@@ -241,7 +246,7 @@ h2 {
   color: #fff;
 }
 
-/* Hero Section */
+/* Hero Section -----------------------------------------------------------*/
 .hero {
   position: relative;
   height: 600px;
@@ -275,24 +280,16 @@ h2 {
 
 .slide-content {
   position: absolute;
+  background: transparent;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 8%;
+  transform: translateY(-50%);
+  color: rgba(255, 192, 203, 0.7);
+  z-index: 2;
+  max-width: 500px;
   text-align: center;
-  color: #fff;
-  background-color: rgba(139, 0, 0, 0.7);
   padding: 20px;
   border-radius: 10px;
-}
-
-.slide-content h2 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.slide-content p {
-  font-size: 1.2rem;
 }
 
 .slider-btn {
@@ -307,6 +304,7 @@ h2 {
   font-size: 1.5rem;
   border-radius: 50%;
   transition: background-color 0.3s ease;
+  z-index: 3;
 }
 
 .slider-btn:hover {
@@ -320,19 +318,7 @@ h2 {
 .slider-btn.next {
   right: 20px;
 }
-/* ----------------------------------------------*/
-.slide-content {
-  position: absolute;
-  background: transparent;
-  top: 50%;
-  left: 8%;
-  transform: translateY(-50%);
-  color: rgba(255, 192, 203, 0.7);
-  z-index: 2;
-  max-width: 500px;
-}
 
-/* Title */
 .slide-content h1 {
   font-size: 3rem;
   font-weight: 700;
@@ -340,19 +326,19 @@ h2 {
   color: darkred;
 }
 
-/* Text */
 .slide-content p {
   font-size: 1.2rem;
   margin-bottom: 25px;
   opacity: 0.9;
 }
 
-/* Clean Button (no red square) */
 .book-btn {
+  display: inline-block;
+  text-decoration: none;
   padding: 12px 30px;
-  background: transparent; /* 🔥 removed red */
+  background: transparent;
   color: #fff;
-  border: 2px solid #fff; /* elegant white border */
+  border: 2px solid #fff;
   border-radius: 30px;
   font-size: 1rem;
   font-weight: 600;
@@ -360,7 +346,6 @@ h2 {
   transition: all 0.3s ease;
 }
 
-/* Hover */
 .book-btn:hover {
   background: #fff;
   color: #000;
@@ -373,12 +358,12 @@ h2 {
   display: flex;
   justify-content: center;
   height: 300px;
-  gap: 16px;
+  /* FIXED: removed duplicate gap: 16px */
+  gap: 50px;
   transition: 0.3s;
   list-style: none;
   padding: 0;
   margin-top: 40px;
-  gap: 50px;
 }
 
 .HAYYY li {
@@ -405,7 +390,6 @@ h2 {
   transition: 0.3s;
 }
 
-/* CONTENT OVERLAY */
 .HAYYY .content {
   position: absolute;
   top: 0;
@@ -424,7 +408,6 @@ h2 {
   visibility: hidden;
 }
 
-/* TEXT */
 .HAYYY span {
   position: absolute;
   left: 50%;
@@ -449,7 +432,6 @@ h2 {
   font-size: 10px;
 }
 
-/* HOVER EFFECT */
 .HAYYY:hover {
   gap: 0;
 }
@@ -470,7 +452,8 @@ h2 {
   opacity: 1;
   visibility: visible;
 }
-/* ------------------------------------------------------------------Featured Services */
+
+/* Featured Services -----------------------------------------------------------*/
 .featured {
   padding: 60px 0;
 }
@@ -516,7 +499,7 @@ h2 {
   text-align: center;
 }
 
-/* Products Section */
+/* Products Section -----------------------------------------------------------*/
 .products {
   padding: 60px 0;
   background-color: #f9f9f9;
@@ -563,7 +546,7 @@ h2 {
   width: calc(100% - 40px);
 }
 
-/* About Section */
+/* About Section -----------------------------------------------------------*/
 .about {
   padding: 60px 0;
   text-align: center;
@@ -578,7 +561,7 @@ h2 {
   line-height: 1.8;
 }
 
-/* Footer */
+/* Footer -----------------------------------------------------------*/
 .footer {
   background-color: #8b0000;
   color: #fff;
@@ -630,7 +613,7 @@ h2 {
   padding-top: 20px;
 }
 
-/* Responsive Design */
+/* Responsive Design -----------------------------------------------------------*/
 @media (max-width: 768px) {
   .header .container {
     flex-direction: column;
@@ -647,7 +630,7 @@ h2 {
     text-align: center;
   }
 
-  .slide-content h2 {
+  .slide-content h1 {
     font-size: 2rem;
   }
 
@@ -655,7 +638,6 @@ h2 {
     font-size: 1rem;
   }
 
-  .services-grid,
   .featured-grid,
   .products-grid {
     grid-template-columns: 1fr;
@@ -665,9 +647,14 @@ h2 {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
+  .HAYYY {
+    gap: 10px;
+    height: 200px;
+  }
 }
 
-/* Animations */
+/* Animations -----------------------------------------------------------*/
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -683,7 +670,6 @@ h2 {
   animation: fadeIn 0.6s ease-out;
 }
 
-.service-card,
 .featured-card,
 .product-card {
   opacity: 0;
@@ -693,19 +679,8 @@ h2 {
     transform 0.6s ease-out;
 }
 
-.service-card.fade-in,
 .featured-card.fade-in,
 .product-card.fade-in {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Loading effect */
-body {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-body.loaded {
-  opacity: 1;
 }
