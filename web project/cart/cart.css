@@ -1,4 +1,4 @@
-/* ── CART PAGE SPECIFIC ── */
+
 .cart-page-hero {
   background: var(--red-deep);
   padding: 3rem 2rem 2.5rem;
@@ -79,7 +79,7 @@
   }
 }
 
-/* ── ITEMS PANEL ── */
+
 .cart-items-header {
   display: flex;
   align-items: center;
@@ -197,7 +197,7 @@
   transform: scale(1.2);
 }
 
-/* Date/Time picker within card */
+
 .cart-item-schedule {
   background: var(--off-white);
   border-top: 1px solid var(--border);
@@ -243,7 +243,7 @@
   }
 }
 
-/* ── EMPTY STATE ── */
+
 .cart-empty-state {
   text-align: center;
   padding: 5rem 2rem;
@@ -272,7 +272,7 @@
   flex-wrap: wrap;
 }
 
-/* ── SUMMARY PANEL ── */
+
 .cart-summary {
   background: var(--white);
   border-radius: var(--radius);
@@ -353,7 +353,7 @@
   display: block;
 }
 
-/* Continue shopping row */
+
 .continue-row {
   display: flex;
   gap: 1rem;
@@ -375,7 +375,7 @@
   text-decoration: underline;
 }
 
-/* Success modal */
+
 .success-modal-content {
   text-align: center;
   padding: 1rem 0;
@@ -411,8 +411,7 @@
   color: var(--red-deep);
 }
 
-/* ----------------------------------------------------------------- */
-/* ── DATETIME VALIDATION ERRORS ── */
+
 .datetime-error {
   grid-column: 1 / -1;
   color: #c94545;
