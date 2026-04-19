@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pamper – Lashes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="nav-logo" href="../HomePage/home.html"
+        ><span class="logo-icon">✦</span
+        ><span class="logo-text"
+          >♡<span class="logo-accent">Pamper</span></span
+        ></a
+      >
+      <ul class="nav-links">
+        <li><a href="../makeup/makeup.html">Makeup</a></li>
+        <li><a href="../hair/hair.html">Hair</a></li>
+        <li><a href="../nails/nails.html">Nails</a></li>
+        <li><a href="../lashes/lashes.html" class="active">Lashes</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="wishlistNavBtn">
+          ♡ <span class="wish-nav-count nav-badge">0</span>
+        </button>
+        <a class="nav-cart-btn" href="../cart/cart.html"
+          >🛒 Cart <span class="cart-nav-count nav-badge">0</span></a
+        >
+      </div>
+    </nav>
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <img
+        src="https://images.unsplash.com/photo-1548902378-2ec44c906391?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFzaGVzfGVufDB8fDB8fHwy"
+        alt="Lash hero"
+        class="hero-bg-img"
+      />
+      <div class="hero-content">
+        <p class="hero-eyebrow">✦ Professional Lash Services</p>
+        <h1 class="hero-title">Eyes That<br /><em>Captivate</em></h1>
+        <p class="hero-desc">
+          From natural lash lifts to full-volume extensions — our lash artists
+          frame your eyes with precision and artistry that lasts.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" id="shopNowBtn">
+            Explore Services →
+          </button>
+          <button class="btn-outline" id="lookbookBtn">View Our Work</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">600+</span
+          ><span class="stat-label">Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">5.0★</span
+          ><span class="stat-label">Avg Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">5+</span
+          ><span class="stat-label">Years Exp.</span>
+        </div>
+      </div>
+    </section>
+    <section class="category-section">
+      <div class="container">
+        <h2 class="section-title">Our Lash Services</h2>
+        <div class="category-tabs" id="categoryTabs">
+          <button class="cat-tab active" data-cat="all">All Services</button>
+          <button class="cat-tab" data-cat="extensions">Extensions</button>
+          <button class="cat-tab" data-cat="lift">Lash Lift</button>
+          <button class="cat-tab" data-cat="tint">Tint & Brow</button>
+          <button class="cat-tab" data-cat="strip">Strip Lashes</button>
+          <button class="cat-tab" data-cat="removal">Removal & Care</button>
+        </div>
+        <div class="filter-bar">
+          <div class="tier-tabs">
+            <button class="tier-tab active" data-tier="all">All Tiers</button>
+            <button class="tier-tab" data-tier="luxury">✦ Luxury</button>
+            <button class="tier-tab" data-tier="premium">Premium</button>
+            <button class="tier-tab" data-tier="essential">Essential</button>
+          </div>
+          <div class="search-box">
+            <span class="search-icon">🔍</span
+            ><input
+              type="text"
+              id="searchInput"
+              placeholder="Search services..."
+            />
+          </div>
+          <select id="sortSelect" class="sort-select">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+            <option value="name">A – Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="products-section">
+      <div class="container">
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="no-results" id="noResults" style="display: none">
+          <p>No services found.</p>
+        </div>
+      </div>
+    </section>
+    <section class="feature-banner">
+      <div class="feature-banner-inner">
+        <div class="feature-text">
+          <p class="feature-eyebrow">✦ Most Requested</p>
+          <h2>Mega Volume<br />Lash Experience</h2>
+          <p class="feature-desc">
+            The ultimate lash transformation. Our mega volume set uses
+            ultra-fine fans hand-crafted by our artists for a full, dramatic,
+            lush look.
+          </p>
+          <button class="btn-primary" id="featureShopBtn">
+            Book Volume Set →
+          </button>
+        </div>
+        <div class="feature-image">
+          <img
+            src="https://images.unsplash.com/photo-1589710751893-f9a6770ad71b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFzaGVzfGVufDB8fDB8fHwy"
+            alt="Volume lashes"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="looks-section">
+      <div class="container">
+        <h2 class="section-title">Our Work</h2>
+        <div class="looks-grid">
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1639629509821-c54cdd984227?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFzaGVzfGVufDB8fDB8fHwy"
+              alt="Classic"
+            />
+            <div class="look-overlay">
+              <h3>Classic Extensions</h3>
+              <button class="btn-sm" onclick="showLook('extensions')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1709316010508-6c86856540e4?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFzaGVzfGVufDB8fDB8fHwy"
+              alt="Volume"
+            />
+            <div class="look-overlay">
+              <h3>Volume Lashes</h3>
+              <button class="btn-sm" onclick="showLook('extensions')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1581389058490-a7cb2a234758?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGFzaGVzfGVufDB8fDB8fHwy"
+              alt="Lift"
+            />
+            <div class="look-overlay">
+              <h3>Lash Lift</h3>
+              <button class="btn-sm" onclick="showLook('lift')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1550005869-5fca7db35ddb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFzaGVzfGVufDB8fDB8fHwy"
+              alt="Strip"
+            />
+            <div class="look-overlay">
+              <h3>Glamour Strips</h3>
+              <button class="btn-sm" onclick="showLook('strip')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal-overlay" id="quickModal">
+      <div class="modal-box">
+        <button class="modal-close" id="closeModal">✕</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+    <div class="wish-overlay" id="wishOverlay"></div>
+    <div class="wish-sidebar" id="wishSidebar">
+      <div class="wish-header">
+        <h3>♥ Wishlist</h3>
+        <button class="sidebar-close" id="closeWish">✕</button>
+      </div>
+      <div class="wish-items" id="wishItems"></div>
+      <div class="wish-footer" id="wishFooter" style="display: none">
+        <a
+          class="btn-primary"
+          href="../cart/cart.html"
+          style="width: 100%; justify-content: center; text-decoration: none"
+          >View Cart →</a
+        >
+      </div>
+    </div>
+    <div id="globalToast"></div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">✦</span
+          ><span class="logo-text"
+            >♡<span class="logo-accent">Pamper</span></span
+          >
+          <p>Stunning lash services for every occasion.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../makeup/makeup.html">Makeup</a></li>
+            <li><a href="../hair/hair.html">Hair</a></li>
+            <li><a href="../nails/nails.html">Nails</a></li>
+            <li><a href="../lashes/lashes.html">Lashes</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Booking Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay in the loop</h4>
+          <p>Get lash tips & exclusive offers.</p>
+          <div class="newsletter-row">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="your@email.com"
+            /><button class="btn-primary" id="newsletterBtn">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Pamper. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="../shared-cart.js"></script>
+    <script src="lashes.js"></script>
+  </body>
+</html>

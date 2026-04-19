@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link rel="stylesheet" href="CheckOut.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../HomePage/home.html" class="logo">
+        <span class="logo-dot"></span>
+        pamper
+      </a>
+      <div class="header-secure">
+        <span>🔒</span>
+        Secure Checkout
+      </div>
+    </header>
+
+    <div class="checkout-wrapper">
+      <!-- LEFT: FORM -->
+      <div class="form-side">
+        <div class="breadcrumb">
+          <a href="../cart/cart.html">Cart</a>
+          <span>›</span>
+          <a href="#">Information</a>
+          <span>›</span>
+          <strong>Shipping</strong>
+          <span>›</span>
+          <span style="color: var(--text-light)">Payment</span>
+        </div>
+
+        <!-- CONTACT -->
+        <p class="section-title">Contact Information</p>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input
+            id="emailInput"
+            type="email"
+            placeholder="your@email.com"
+            oninput="validateEmail(this)"
+          />
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="newsletter" value="agree" checked />
+          <label for="newsletter">
+            Email me with news and exclusive offers
+          </label>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- SHIPPING ADDRESS -->
+        <p class="section-title">Shipping Address</p>
+        <div class="form-group">
+          <label>Country / Region</label>
+          <select>
+            <option value="eg" selected>Egypt</option>
+            <option value="sa">Saudi Arabia</option>
+            <option value="ae">United Arab Emirates</option>
+            <option value="kw">Kuwait</option>
+            <option value="jo">Jordan</option>
+            <option value="lb">Lebanon</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input id="firstName" type="text" placeholder="Sara" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input id="lastName" type="text" placeholder="Ahmed" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input
+            id="addressInput"
+            type="text"
+            placeholder="Street address, apartment, etc."
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <input id="cityInput" type="text" placeholder="Cairo" />
+          </div>
+          <div class="form-group">
+            <label>Governorate</label>
+            <select id="governorateSelect">
+              <option>Cairo</option>
+              <option>Giza</option>
+              <option>Alexandria</option>
+              <option>Sharm El-Sheikh</option>
+              <option>Luxor</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Phone</label>
+          <input id="phoneInput" type="tel" placeholder="+20 1xx xxx xxxx" />
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- PAYMENT -->
+        <p class="section-title">Payment</p>
+        <div class="cod-checkbox-row">
+          <input
+            type="checkbox"
+            id="cashOnDelivery"
+            onclick="toggleCashOnDelivery(this)"
+          />
+          <label for="cashOnDelivery">Cash</label>
+        </div>
+        <div id="paymentMsg" class="payment-msg">
+          Pay by card or select Cash to pay when your order arrives.
+        </div>
+
+        <div class="payment-icons">
+          <div class="payment-icon">credit cards</div>
+          <div class="payment-icon">Debit cards</div>
+          <div class="payment-icon">Telda</div>
+        </div>
+
+        <div class="card-field">
+          <div class="card-number-row">
+            <input
+              id="cardNumber"
+              type="text"
+              placeholder="Card number"
+              maxlength="19"
+              oninput="formatCard(this)"
+            />
+            <span class="card-type-icon" id="cardTypeIcon">💳</span>
+          </div>
+          <div class="card-bottom-row">
+            <input
+              id="expiryInput"
+              type="text"
+              placeholder="MM / YY"
+              maxlength="7"
+              oninput="formatExpiry(this)"
+            />
+            <input id="cvvInput" type="text" placeholder="CVV" maxlength="4" />
+          </div>
+        </div>
+
+        <div class="form-group card-name-group" style="margin-top: 12px">
+          <label>Name on Card</label>
+          <input
+            id="cardName"
+            type="text"
+            placeholder="As it appears on your card"
+          />
+        </div>
+
+        <hr class="section-divider" />
+        <div class="checkbox-row">
+          <input type="checkbox" id="termsAccept" />
+          <label for="termsAccept">
+            I accept the
+            <a href="termsandcon.html" target="_blank" rel="noopener noreferrer"
+              >terms and conditions</a
+            >
+            for beauty care home services.
+          </label>
+        </div>
+        <div id="formErrorMsg" class="form-error-msg"></div>
+
+        <button class="btn-submit" onclick="handleSubmit()">
+          🔒 Complete Order
+        </button>
+        <button
+          type="button"
+          class="btn-shop"
+          onclick="window.location.href = '../HomePage/home.html'"
+          style="margin-top: 12px"
+        >
+          ← Back to Home Page
+        </button>
+        <div class="privacy-note">
+          🛡️ Your information is encrypted and secure
+        </div>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY (empty cart) -->
+      <div class="summary-side">
+        <div class="summary-title">
+          <span>Order Summary</span>
+          <span class="item-count">0 items</span>
+        </div>
+
+        <div id="orderItems" class="order-items" style="display: none"></div>
+
+        <!-- Empty Cart State -->
+        <div class="empty-cart">
+          <div class="empty-cart-icon">🛒</div>
+          <div class="empty-cart-title">Your cart is empty</div>
+          <div class="empty-cart-sub">
+            Looks like you haven't added anything yet. Explore our skincare
+            collection!
+          </div>
+          <button
+            class="btn-shop"
+            onclick="window.location.href = '../HomePage/home.html'"
+          >
+            Continue Shopping
+          </button>
+        </div>
+
+        <!-- TOTALS (zeroed out) -->
+        <div class="totals">
+          <div class="total-row">
+            <span class="total-label">Subtotal</span>
+            <span id="subtotalValue">EGP 0.00</span>
+          </div>
+          <div class="total-row" id="discountRow" style="display: none">
+            <span>Discount</span>
+            <span id="discountVal">− EGP 0</span>
+          </div>
+          <div class="total-row">
+            <span class="total-label">Shipping</span>
+            <span class="free-tag" id="shippingLabel">Free</span>
+          </div>
+          <div class="total-row grand">
+            <span class="total-label grand">Total</span>
+            <span id="grandTotal">EGP 0.00</span>
+          </div>
+        </div>
+
+        <div class="trust-badges">
+          <div class="badge">
+            <span class="badge-icon">💅</span>
+            Flexible Scheduling<br />Book or reschedule your beauty appointments
+            easily
+          </div>
+          <div class="badge">
+            <span class="badge-icon">🌸</span>
+            Professional & Safe<br />Certified beauticians using hygienic,
+            quality products
+          </div>
+          <div class="badge">
+            <span class="badge-icon">🏠</span>
+            Privacy Guaranteed<br />Discreet home service, comfort of your own
+            space
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../shared-cart.js"></script>
+    <script src="CheckOut.js"></script>
+  </body>
+</html>

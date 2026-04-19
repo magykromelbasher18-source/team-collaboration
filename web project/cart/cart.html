@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pamper – My Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="../shared.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="nav-logo" href="../HomePage/home.html"
+        ><span class="logo-icon">✦</span
+        ><span class="logo-text"
+          >♡<span class="logo-accent">Pamper</span></span
+        ></a
+      >
+      <ul class="nav-links">
+        <li><a href="../makeup/makeup.html">Makeup</a></li>
+        <li><a href="../hair/hair.html">Hair</a></li>
+        <li><a href="../nails/nails.html">Nails</a></li>
+        <li><a href="../lashes/lashes.html">Lashes</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="wishlistNavBtn">
+          ♡ <span class="wish-nav-count nav-badge">0</span>
+        </button>
+        <a class="nav-cart-btn" href="../cart/cart.html"
+          >🛒 Cart <span class="cart-nav-count nav-badge">0</span></a
+        >
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="cart-page-hero">
+      <h1 class="cart-hero-title">My <em>Cart</em></h1>
+      <p class="cart-hero-sub">
+        Review your selected services, choose your date & time, then proceed.
+      </p>
+      <div class="cart-breadcrumb">
+        <a href="../HomePage/home.html">Home</a> <span>›</span>
+        <span>My Cart</span>
+      </div>
+    </div>
+
+    <!-- Layout -->
+    <div class="cart-layout">
+      <!-- Items -->
+      <div class="cart-items-panel">
+        <div class="cart-items-header">
+          <h2>
+            Your Services
+            <span
+              id="itemCountBadge"
+              style="
+                font-size: 14px;
+                font-weight: 400;
+                color: var(--text-muted);
+              "
+            ></span>
+          </h2>
+          <button class="clear-cart-btn" id="clearCartBtn">Clear All</button>
+        </div>
+        <div id="cartItemsList"></div>
+      </div>
+
+      <!-- Summary -->
+      <div class="cart-summary" id="cartSummary">
+        <p class="summary-title">Order Summary</p>
+        <div class="summary-rows" id="summaryRows"></div>
+        <hr class="summary-divider" />
+        <div class="summary-total-row">
+          <span>Total</span><span id="summaryTotal">$0</span>
+        </div>
+        <p class="schedule-warning" id="scheduleWarning">
+          ⚠ Please set a date & time for all services before checking out.
+        </p>
+        <p class="summary-note" style="margin-top: 1rem">
+          Prices shown are starting rates. Final pricing confirmed upon booking.
+          Our team will contact you within 24 hours.
+        </p>
+        <button class="btn-primary checkout-btn" id="checkoutBtn">
+          Proceed to Checkout →
+        </button>
+        <div class="continue-row">
+          <a class="continue-link" href="../makeup/makeup.html">+ Makeup</a>
+          <a class="continue-link" href="../hair/hair.html">+ Hair</a>
+          <a class="continue-link" href="../nails/nails.html">+ Nails</a>
+          <a class="continue-link" href="../lashes/lashes.html">+ Lashes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wishlist Sidebar -->
+    <div class="wish-overlay" id="wishOverlay"></div>
+    <div class="wish-sidebar" id="wishSidebar">
+      <div class="wish-header">
+        <h3>♥ Wishlist</h3>
+        <button class="sidebar-close" id="closeWish">✕</button>
+      </div>
+      <div class="wish-items" id="wishItems"></div>
+      <div class="wish-footer" id="wishFooter" style="display: none">
+        <button
+          class="btn-primary"
+          id="addAllToCart"
+          style="width: 100%; justify-content: center"
+        >
+          Add All to Cart 🛒
+        </button>
+      </div>
+    </div>
+
+    <!-- Checkout Success Modal -->
+    <div class="modal-overlay" id="successModal">
+      <div class="modal-box" style="max-width: 520px">
+        <button class="modal-close" id="closeSuccess">✕</button>
+        <div class="success-modal-content">
+          <div class="success-icon">✦</div>
+          <h2>Booking Confirmed!</h2>
+          <p>
+            Thank you for choosing Pamper. Your booking request has been
+            received and our team will reach out within 24 hours to confirm your
+            appointments.
+          </p>
+          <div class="success-booking-details" id="successDetails"></div>
+          <a
+            href="../makeup/makeup.html"
+            class="btn-primary"
+            style="text-decoration: none; justify-content: center; width: 100%"
+            >Continue Shopping →</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="globalToast"></div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">✦</span
+          ><span class="logo-text"
+            >♡<span class="logo-accent">Pamper</span></span
+          >
+          <p>Your destination for luxury beauty services.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../makeup/makeup.html">Makeup</a></li>
+            <li><a href="../hair/hair.html">Hair</a></li>
+            <li><a href="../nails/nails.html">Nails</a></li>
+            <li><a href="../lashes/lashes.html">Lashes</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Booking Policy</a></li>
+            <li><a href="#">Cancellations</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay in the loop</h4>
+          <p>Get beauty tips & exclusive offers.</p>
+          <div class="newsletter-row">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="your@email.com"
+            /><button class="btn-primary" id="newsletterBtn">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Pamper. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="../shared-cart.js"></script>
+    <script src="cart.js"></script>
+  </body>
+</html>

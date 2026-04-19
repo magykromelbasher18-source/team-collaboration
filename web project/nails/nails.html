@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pamper – Nails</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../shared.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="nav-logo" href="../HomePage/home.html"
+        ><span class="logo-icon">✦</span
+        ><span class="logo-text"
+          >♡<span class="logo-accent">Pamper</span></span
+        ></a
+      >
+      <ul class="nav-links">
+        <li><a href="../makeup/makeup.html">Makeup</a></li>
+        <li><a href="../hair/hair.html">Hair</a></li>
+        <li><a href="../nails/nails.html" class="active">Nails</a></li>
+        <li><a href="../lashes/lashes.html">Lashes</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="wishlistNavBtn">
+          ♡ <span class="wish-nav-count nav-badge">0</span>
+        </button>
+        <a class="nav-cart-btn" href="../cart/cart.html"
+          >🛒 Cart <span class="cart-nav-count nav-badge">0</span></a
+        >
+      </div>
+    </nav>
+    <section class="page-hero">
+      <div class="hero-overlay"></div>
+      <img
+        src="https://images.unsplash.com/photo-1604654894611-6973b376cbde?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fG5haWxzfGVufDB8fDB8fHwy"
+        alt="Nail hero"
+        class="hero-bg-img"
+      />
+      <div class="hero-content">
+        <p class="hero-eyebrow">✦ Professional Nail Services</p>
+        <h1 class="hero-title">Flawless Nails,<br /><em>Every Time</em></h1>
+        <p class="hero-desc">
+          From classic manicures to intricate nail art — our expert technicians
+          craft perfection at your fingertips.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn-primary" id="shopNowBtn">
+            Explore Services →
+          </button>
+          <button class="btn-outline" id="lookbookBtn">View Our Work</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">800+</span
+          ><span class="stat-label">Clients</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">4.9★</span
+          ><span class="stat-label">Avg Rating</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">6+</span
+          ><span class="stat-label">Years Exp.</span>
+        </div>
+      </div>
+    </section>
+    <section class="category-section">
+      <div class="container">
+        <h2 class="section-title">Our Nail Services</h2>
+        <div class="category-tabs" id="categoryTabs">
+          <button class="cat-tab active" data-cat="all">All Services</button>
+          <button class="cat-tab" data-cat="manicure">Manicure</button>
+          <button class="cat-tab" data-cat="pedicure">Pedicure</button>
+          <button class="cat-tab" data-cat="extensions">Extensions</button>
+          <button class="cat-tab" data-cat="art">Nail Art</button>
+          <button class="cat-tab" data-cat="treatment">Treatments</button>
+        </div>
+        <div class="filter-bar">
+          <div class="tier-tabs">
+            <button class="tier-tab active" data-tier="all">All Tiers</button>
+            <button class="tier-tab" data-tier="luxury">✦ Luxury</button>
+            <button class="tier-tab" data-tier="premium">Premium</button>
+            <button class="tier-tab" data-tier="essential">Essential</button>
+          </div>
+          <div class="search-box">
+            <span class="search-icon">🔍</span
+            ><input
+              type="text"
+              id="searchInput"
+              placeholder="Search services..."
+            />
+          </div>
+          <select id="sortSelect" class="sort-select">
+            <option value="default">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+            <option value="name">A – Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="products-section">
+      <div class="container">
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="no-results" id="noResults" style="display: none">
+          <p>No services found.</p>
+        </div>
+      </div>
+    </section>
+    <section class="feature-banner">
+      <div class="feature-banner-inner">
+        <div class="feature-text">
+          <p class="feature-eyebrow">✦ Most Requested</p>
+          <h2>Luxury Gel<br />Nail Experience</h2>
+          <p class="feature-desc">
+            Long-lasting, chip-free perfection. Our luxury gel package includes
+            a full manicure, cuticle care, shaping, and two weeks of flawless
+            color.
+          </p>
+          <button class="btn-primary" id="featureShopBtn">
+            Book Gel Package →
+          </button>
+        </div>
+        <div class="feature-image">
+          <img
+            src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmFpbHN8ZW58MHx8MHx8fDI%3D"
+            alt="Gel nails"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="looks-section">
+      <div class="container">
+        <h2 class="section-title">Our Work</h2>
+        <div class="looks-grid">
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1612887390768-fb02affea7a6?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmFpbHN8ZW58MHx8MHx8fDI%3D"
+              alt="Gel"
+            />
+            <div class="look-overlay">
+              <h3>Gel Glam</h3>
+              <button class="btn-sm" onclick="showLook('manicure')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1630843599725-32ead7671867?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmFpbHN8ZW58MHx8MHx8fDI%3D"
+              alt="Art"
+            />
+            <div class="look-overlay">
+              <h3>Floral Art</h3>
+              <button class="btn-sm" onclick="showLook('art')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bmFpbHN8ZW58MHx8MHx8fDI%3D"
+              alt="Ext"
+            />
+            <div class="look-overlay">
+              <h3>Almond Extensions</h3>
+              <button class="btn-sm" onclick="showLook('extensions')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+          <div class="look-card">
+            <img
+              src="https://images.unsplash.com/photo-1610992015836-7c249d75782d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmFpbHN8ZW58MHx8MHx8fDI%3D"
+              alt="French"
+            />
+            <div class="look-overlay">
+              <h3>French Tips</h3>
+              <button class="btn-sm" onclick="showLook('manicure')">
+                Explore Look
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="modal-overlay" id="quickModal">
+      <div class="modal-box">
+        <button class="modal-close" id="closeModal">✕</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+    <div class="wish-overlay" id="wishOverlay"></div>
+    <div class="wish-sidebar" id="wishSidebar">
+      <div class="wish-header">
+        <h3>♥ Wishlist</h3>
+        <button class="sidebar-close" id="closeWish">✕</button>
+      </div>
+      <div class="wish-items" id="wishItems"></div>
+      <div class="wish-footer" id="wishFooter" style="display: none">
+        <a
+          class="btn-primary"
+          href="../cart/cart.html"
+          style="width: 100%; justify-content: center; text-decoration: none"
+          >View Cart →</a
+        >
+      </div>
+    </div>
+    <div id="globalToast"></div>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">✦</span
+          ><span class="logo-text"
+            >♡<span class="logo-accent">Pamper</span></span
+          >
+          <p>Your destination for luxury nail care.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../makeup/makeup.html">Makeup</a></li>
+            <li><a href="../hair/hair.html">Hair</a></li>
+            <li><a href="../nails/nails.html">Nails</a></li>
+            <li><a href="../lashes/lashes.html">Lashes</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Booking Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Stay in the loop</h4>
+          <p>Get nail inspo & exclusive offers.</p>
+          <div class="newsletter-row">
+            <input
+              type="email"
+              id="newsletterEmail"
+              placeholder="your@email.com"
+            /><button class="btn-primary" id="newsletterBtn">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Pamper. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="../shared-cart.js"></script>
+    <script src="nails.js"></script>
+  </body>
+</html>
