@@ -1,0 +1,31 @@
+{
+  "name": "pamper",
+  "version": "1.0.0",
+  "description": "Pamper - Luxury beauty services booking platform",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "seed": "node seed.js",
+    "images": "node scripts/download-images.js"
+  },
+  "keywords": [
+    "beauty",
+    "booking",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.7.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.10.1"
+  }
+}
